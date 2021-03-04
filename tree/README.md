@@ -77,3 +77,6 @@ Implementing ITreeItem.
 #### Number:
 Holder for a number.
 Implementing IDataItem.
+
+## Information
+[Wikipedia](https://de.wikipedia.org/wiki/AVL-Baum)
