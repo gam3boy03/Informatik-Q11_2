@@ -19,6 +19,29 @@ int[] rem = new int[] {1, 6, 13, 10};
 
 ## Usage
 
+```
+BinaryTree tree;
+
+void setup() {
+    ...
+    tree = new BinaryTree();
+    ...
+}
+
+void draw(){
+    ...
+    tree.insert(IDataItem data); //insert into tree
+    ...
+    tree.remove(IDataItem data); //remove from tree
+    ...
+    tree.count(); //get amount of Nodes
+    ...
+    tree.draw(); //draw the tree as seen above
+    ...
+}
+
+```
+
 ## Construction
 ### Interfaces
 There are two main interfaces in this code:

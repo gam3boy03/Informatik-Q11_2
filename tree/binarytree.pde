@@ -9,10 +9,6 @@ class BinaryTree {
         root = root.insert(item);
     }
 
-    int balance() {
-        return root.balance();
-    }
-
     int count() {
         return root.count();
     }
