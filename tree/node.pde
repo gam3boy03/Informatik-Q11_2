@@ -22,15 +22,15 @@ class Node implements ITreeItem{
         else left = left.insert(item);
 
         int balance = balance();
-        if(balance <= -2){
-            if(left.balance() <= -1) return rotateRight(this);
+        if(balance > 1){
+            if(left.balance() > 1) return rotateRight(this);
             else {
                 this.right = rotateLeft(this.right);
                 return rotateRight(this);
             }
         }
-        else if(balance >= 2){
-            if(right.balance() >= 1) return rotateLeft(this);
+        else if(balance < -1){
+            if(right.balance() <= -1) return rotateLeft(this);
             else {
                 this.right = rotateRight(this.right);
                 return rotateLeft(this);
@@ -71,8 +71,12 @@ class Node implements ITreeItem{
         return a > b ? a : b;
     }
 
+    int Min(int a, int b){
+        return a < b ? a : b;
+    }
+
     int balance() {
-        return right.height() - left.height();
+        return left.height() - right.height();
     }
 
     void draw(int x, int y, int div){
