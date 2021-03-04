@@ -14,6 +14,8 @@ interface ITreeItem{
 
     int count();
 
+    ITreeItem remove(IDataItem data);
+
     int height();
     int balance();
 

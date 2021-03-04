@@ -34,6 +34,11 @@ class Ending implements ITreeItem{
     
     int count() { return 0; }
 
+    ITreeItem remove(IDataItem data) {
+        println("Item not found");
+        return this;
+    }
+
     int height(){
         return 0;
     }

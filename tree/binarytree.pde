@@ -17,5 +17,9 @@ class BinaryTree {
         return root.count();
     }
 
+    void remove(IDataItem data) {
+        root.remove(data);
+    }
+
     void draw() { root.draw(width/2, 100, 4); }
 }

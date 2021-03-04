@@ -21,6 +21,10 @@ class Node implements ITreeItem{
         if(this.data.compareTo(item) > 0) right = right.insert(item);
         else left = left.insert(item);
 
+        return balanceOut();        
+    }
+
+    ITreeItem balanceOut() {
         int balance = balance();
         if(balance > 1){
             if(left.balance() > 0) return rotateRight(this);
@@ -59,6 +63,7 @@ class Node implements ITreeItem{
     IDataItem getDataItem(){ return data; }
 
     boolean isEnding(){ return false; }
+
     boolean isLeaf(){
         return left.isEnding() && right.isEnding();
     }
@@ -67,15 +72,35 @@ class Node implements ITreeItem{
         return left.count() + right.count() + 1;
     }
 
-    int height() {
-        return Max(left.height(), right.height()) + 1;
+    ITreeItem remove(IDataItem data) {
+        if(this.data.compareTo(data) == 0){
+            if(isLeaf()) return new Ending();
+            else if(left.isEnding()) return right;
+            else if(right.isEnding()) return left;
+            else {
+                ITreeItem temp = right;
+                while (!temp.getLeft().isEnding()) {
+                    temp = temp.getLeft();
+                }
+                this.data = temp.getDataItem();
+                right = right.remove(temp.getDataItem());
+            }
+        }
+        else if(this.data.compareTo(data) > 0) right = right.remove(data);
+        else left = left.remove(data);
+
+        return balanceOut();
     }
 
-    int Max(int a, int b){
+    int height() {
+        return max(left.height(), right.height()) + 1;
+    }
+
+    int max(int a, int b){
         return a > b ? a : b;
     }
 
-    int Min(int a, int b){
+    int min(int a, int b){
         return a < b ? a : b;
     }
 
