@@ -23,4 +23,5 @@ void draw() {
 	tree.draw();
     //int num = (int) random(0, 10000);
     //tree.insert(new Number(num));
+    saveFrame("frames/frame-####.png");
 } 
