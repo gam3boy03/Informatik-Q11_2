@@ -23,14 +23,14 @@ class Node implements ITreeItem{
 
         int balance = balance();
         if(balance > 1){
-            if(left.balance() > 1) return rotateRight(this);
+            if(left.balance() > 0) return rotateRight(this);
             else {
                 this.right = rotateLeft(this.right);
                 return rotateRight(this);
             }
         }
         else if(balance < -1){
-            if(right.balance() <= -1) return rotateLeft(this);
+            if(right.balance() < 0) return rotateLeft(this);
             else {
                 this.right = rotateRight(this.right);
                 return rotateLeft(this);
@@ -61,6 +61,10 @@ class Node implements ITreeItem{
     boolean isEnding(){ return false; }
     boolean isLeaf(){
         return left.isEnding() && right.isEnding();
+    }
+
+    int count() {
+        return left.count() + right.count() + 1;
     }
 
     int height() {

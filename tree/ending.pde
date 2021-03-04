@@ -15,6 +15,7 @@ class Ending implements ITreeItem{
     void setRight(ITreeItem item) {
     }
 
+
     ITreeItem insert(IDataItem item){
         return new Node(item);
     }
@@ -30,6 +31,8 @@ class Ending implements ITreeItem{
     boolean isLeaf(){
         return true;
     }
+    
+    int count() { return 0; }
 
     int height(){
         return 0;

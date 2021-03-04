@@ -13,5 +13,9 @@ class BinaryTree {
         return root.balance();
     }
 
+    int count() {
+        return root.count();
+    }
+
     void draw() { root.draw(width/2, 100, 4); }
 }

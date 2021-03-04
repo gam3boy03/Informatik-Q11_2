@@ -2,7 +2,7 @@ BinaryTree tree;
 
 void setup() { 
     tree = new BinaryTree();
-    frameRate(10);
+    frameRate(60);
     //size(512, 512);
     fullScreen();
 
@@ -23,7 +23,10 @@ void setup() {
 
 void draw() {
     background(255);
+    textSize(20);
+    fill(0);
+    text(tree.count(), 100, 100);
 	tree.draw();
-    int num = (int) random(0, 255);
-    //tree.insert(new Number(num));
+    int num = (int) random(0, 10000);
+    tree.insert(new Number(num));
 } 

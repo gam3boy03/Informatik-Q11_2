@@ -12,6 +12,8 @@ interface ITreeItem{
     boolean isEnding();
     boolean isLeaf();
 
+    int count();
+
     int height();
     int balance();
 
