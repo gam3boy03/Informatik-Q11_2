@@ -9,6 +9,12 @@ and removing the array
 int[] rem = new int[] {1, 6, 13, 10};
 ```
 
+| Thing | Description |
+| ------------- |:-------------:| 
+| Green Dot with number | Node with value| 
+| Black Dot | Ending   | 
+| Blue number | Balance value of Node |
+
 ![animation](images/animation.gif)
 
 ## Usage
