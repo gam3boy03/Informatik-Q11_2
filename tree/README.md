@@ -79,4 +79,5 @@ Holder for a number.
 Implementing IDataItem.
 
 ## Information
-[Wikipedia](https://de.wikipedia.org/wiki/AVL-Baum)
+ - [Wikipedia (de)](https://de.wikipedia.org/wiki/AVL-Baum)
+ - [Wikipedia (en)](https://en.wikipedia.org/wiki/AVL_tree)
